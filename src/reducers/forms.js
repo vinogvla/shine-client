@@ -23,14 +23,31 @@ export const initialState = [
     id: '/order',
     elements: [
       {
-        isValid: (value) => { return value.length > 2 && value.length < 10 },
-        label: "Password",
-        name: "password",
-        type: "password",
-        value: "",
+        maxLength: 21,
+        label: "Patient",
+        name: "PATIENT",
+        value: ""
       },
+      {
+        isValid: (value) => ( value.length > 0 && value.length < 22 ),
+        label: "PO#",
+        name: "JOB",
+        value: ""
+      },
+      {
+        isValid: (value) => ( /R|L|B/.test(value) ),
+        label: "EYE",
+        maxLength: 1,
+        name: "DO",
+        value: "RLB",
+      },
+      {
+        label: "City",
+        name: "city",
+        type: "select",
+        value: ""
+      }
     ]
-  
   }
 ]
 

@@ -5,7 +5,7 @@ const Element = ({ isValid, handleChange, label, value, ...rest }) => {
     <div>
       <label>{label}</label>
       <input value={value} onChange={handleChange} {...rest} />
-      <p>{ isValid(value) ? "valid" : "invalid" }</p>
+      <p>{ isValid && isValid(value) ? "valid" : "invalid" }</p>
     </div>
    )
 }

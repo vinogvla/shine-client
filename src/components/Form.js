@@ -19,7 +19,7 @@ const Form = (props) => {
   }
 
   const isValid = () => (
-    !props.elements.map(el=>el.isValid(el.value)).includes(false)
+    !props.elements.map(el=>el.isValid && el.isValid(el.value)).includes(false)
   )
 
   return (
