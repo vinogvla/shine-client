@@ -4,6 +4,7 @@ import Element from './Element'
 import { changeValue } from '../actions'
 
 const Form = (props) => {
+  console.log(props)
 
   const handleChange = (e) => {
     props.changeValue({
@@ -26,12 +27,12 @@ const Form = (props) => {
       { props.elements.map(el =>
           <Element key={el.name} {...el} handleChange={handleChange} />
       ) }
-    <p>form is { isValid() ? "valid" : "invalid" }</p>
+      <p>form is { isValid() ? "valid" : "invalid" }</p>
     </form>
   )
 }
 
 export default connect(
-  state => (state),
+  (state, ownProps) => (state.forms.filter(form => form.id === ownProps.match.path))[0],
   { changeValue }
 )(Form)

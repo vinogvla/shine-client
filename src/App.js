@@ -1,10 +1,8 @@
 import React  from 'react'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
-
-import Login from './components/Login'
+import Form from './components/Form'
 
 const Home = () => <div>Home</div>
-const Order = () => <div>Order</div>
 const Layout = (props) => <div>{props.children}</div>
 
 const App = () => (
@@ -17,8 +15,8 @@ const App = () => (
       </nav>
       
       <Route path="/" exact component={Home} />
-      <Route path="/login" component={Login} />
-      <Route path="/order" component={Order} />
+      <Route path="/login" component={Form} />
+      <Route path="/order" component={Form} />
 
     </Layout>
   </BrowserRouter>
